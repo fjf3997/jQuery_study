@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        $(function(){
+            var $link = $('.link');
+            var $img = $('img');
+            $link.html('百度连接');
+            console.log($link.html());
+            console.log($link.prop('class'));
+            $link.prop({'href':'http://www.baidu.com','title':'去往百度的连接'});
+            console.log($link.prop('title'));
+            console.log($img.prop('src'));
+        })
+    </script>
+</head>
+<body>
+    <a href="#" class="link"></a>
+    <img src="../images/001.jpg" alt="图片加载失败">
+</body>
+</html>

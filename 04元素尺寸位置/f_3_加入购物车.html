@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <style>
+        .cart{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+            float: right;
+            margin-top:50px;
+            margin-left: 50px;
+            text-align: center;
+
+        }
+        .cart em{
+            font-style: normal;
+            color: red;
+            font-weight: bold;
+        }
+        .add{
+            width:200px;
+            height: 60px;
+            background-color: yellow;
+            text-align: center;
+            margin-top: 500px;
+            margin-left: 600px;
+            border: 0;
+            float:left;
+        }
+        .point{
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        $(function(){
+            var $cart = $('.cart');
+            var $btn = $('.add');
+            var $point = $('.point');
+            var $count = $('.cart em')
+            var $wBtn = $btn.outerWidth();
+            var $hBtn = $btn.outerHeight();
+            var $wCart = $cart.outerWidth();
+            var $hCart = $cart.outerHeight();    
+            $btn.click(function(){
+                var posBtn = $btn.offset();
+                var posCart = $cart.offset();
+                $point.css({'left':posBtn.left+parseInt($wBtn/2)-8,'top':posBtn.top+parseInt($hBtn/2)-8,'display':'block'});
+                $point.animate({'left':posCart.left+parseInt($wCart/2)-8,'top':posCart.top+parseInt($hCart/2)-8},1000,function(){
+                    var $content = $count.html();
+                    // alert($content);
+                    $count.html(parseInt($content)+1);
+                    $point.hide();
+                });
+            })
+
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <div class="cart">购物车<em class="num">0</em></div>
+    <input type="button" class="add" value="加入购物车">
+    <div class="point"></div>
+</body>
+</html>

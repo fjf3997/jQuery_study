@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $btn = $('#btn');
+            $btn.bind('click mouseover',function(){
+                alert('触发事件');
+                $btn.unbind('mouseover');
+            })
+        })
+    </script>
+    <style>
+        input{
+            width:50px;
+            height: 50px;
+            border: 0;
+            background-color:gold;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="触发事件按钮">
+</body>
+</html>

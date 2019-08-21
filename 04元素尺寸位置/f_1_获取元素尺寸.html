@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $box = $('.box');
+            console.log($box.height())
+            console.log($box.width())
+            console.log($box.innerHeight())
+            console.log($box.innerWidth())
+            console.log($box.outerHeight())
+            console.log($box.outerWidth())
+            console.log($box.outerHeight(true))
+            console.log($box.outerWidth(true))
+
+        })
+    </script>
+    <style>
+        .box{
+            width: 140px;
+            height: 140px;
+            padding: 20px;
+            border: 10px solid black;
+            background-color: gold;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">盒子里面的文字内容,距离边框有一定的距离.</div>
+</body>
+</html>

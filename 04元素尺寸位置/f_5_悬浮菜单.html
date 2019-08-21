@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .banner{
+            width: 960px;
+            height: 200px;
+            margin: auto ;
+            background-color: greenyellow;
+
+        }
+        .menu{
+            width: 960px;
+            height: 80px;
+            margin: auto ;
+            background-color: royalblue;
+            text-align: center;
+            line-height: 80px;
+        }
+        .menu_back{
+            width: 960px;
+            height: 80px;
+            display: none;
+        }
+        p{
+            margin: auto;
+            text-align: center;
+        }
+        .totop{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+            $(function(){
+                var $menu = $('.menu');
+                var $menu_back = $('.menu_back');
+                var $totop = $('.totop');
+                $(window).scroll(function(){
+                    var $top = $(window).scrollTop();
+                    document.title = $top;
+                    if($top > 200){
+                        $menu.css({
+                            'position':'fixed',
+                            'left':'50%',
+                            'top':0,
+                            'margin-left':-480
+                        });
+                        $menu_back.show();
+                    }else{
+                        $menu.css({
+                            'position':'static',
+                            'margin':'auto'
+                        });
+                        $menu_back.hide();
+                    }
+                    if($top > 100){
+                        $totop.fadeIn();
+                    }else{
+                        $totop.fadeOut();
+                    }
+                })
+                $totop.click(function(){
+                    $('body,html').animate({'scrollTop':0});
+                })
+            })
+        </script>
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="menu">菜单</div>
+    <div class="menu_back"></div>
+    <div class="totop">↑</div>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>文档</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+</body>
+</html>
