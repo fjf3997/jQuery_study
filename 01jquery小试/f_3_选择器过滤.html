@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('div').css({'background-color':'yellow'});
+            $('div').has('p').css({'fontSize':'20px'});
+            $('div').eq(4).css({'color':'red'});
+            $('div').eq(4).prev().css({'background-color':'blue'});
+            $('div').eq(4).next().css({'background-color':'green'});
+            $('div').find('.span1').css({'font-size':'30px'});
+        })
+       
+
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div><p>2</p></div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div><span>8</span><span class="span1">9</span></div>
+</body>
+</html>

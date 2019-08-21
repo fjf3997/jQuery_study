@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div = $('#div');
+            $('#btn1').click(function(){
+                $div.toggle(1000,function(){
+                    // alert('显示隐藏完成');
+                });
+            })
+            $('#btn2').click(function(){
+                $div.fadeToggle(1000);
+            })
+            $('#btn3').click(function(){
+                $div.slideToggle(1000);
+            })
+        })
+    </script>
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(135, 219, 38);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="显示隐藏" id="btn1">
+    <input type="button" value="淡入淡出" id="btn2">
+    <input type="button" value="下拉上卷" id="btn3">
+    <div id="div"></div>
+</body>
+</html>
