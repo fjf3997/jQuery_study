@@ -4,60 +4,46 @@
 	<meta charset="UTF-8">
 	<title>整页滚动</title>
 	<link rel="stylesheet" type="text/css" href="css/test.css">
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mousewheel.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			var $screen = $('.pages_con');
+			var $page_con = $('.pages_con');
 			var $pages = $('.pages');
-			var $len = $pages.length;
-			var $h = $(window).height();
-			var $points = $('.points li');
+			var $points = $('.points li')
+			var $count = $pages.length;
 			var timer = null;
-
-			var $nowscreen = 0;
+			// alert($count);
+			var $currentPage = 0;
+			var $h = $(window).height();
 			$pages.css({'height':$h});
-			$pages.eq(0).addClass('moving');
-
-
+			$pages.eq($currentPage).addClass('moving');
 			$points.click(function(){
-				$nowscreen = $(this).index();
-				$points.eq($nowscreen).addClass('active').siblings().removeClass('active');
-				$screen.animate({'top':-$h*$nowscreen},300);
-				$pages.eq($nowscreen).addClass('moving').siblings().removeClass('moving');
+				$currentPage = $(this).index();
+				$points.eq($currentPage).addClass('active').siblings().removeClass('active');
+				$page_con.animate({'top':-$h*$currentPage},300);
+				$pages.eq($currentPage).addClass('moving').siblings().removeClass('moving');
 			})
-
-
-
-			$(window).mousewheel(function(event,dat){
+			$(window).mousewheel(function(event,data){
 				clearTimeout(timer);
 				timer = setTimeout(function(){
-
-					if(dat==-1)
-					{
-						$nowscreen++;
+					if(data == -1){
+					$currentPage ++;
+					}else{
+						$currentPage --;
 					}
-					else
-					{
-						$nowscreen--;
+					if($currentPage < 0){
+						$currentPage = 0;
 					}
-					if($nowscreen<0)
-					{
-						$nowscreen=0;
+					if($currentPage > $count - 1){
+						$currentPage = $count - 1;
 					}
-
-					if($nowscreen>$len-1)
-					{
-						$nowscreen=$len-1;
-					}
-
-					$screen.animate({'top':-$h*$nowscreen},300);
-					$pages.eq($nowscreen).addClass('moving').siblings().removeClass('moving');
-
-					$points.eq($nowscreen).addClass('active').siblings().removeClass('active');
-
-					},200)		
-
+					$page_con.animate({'top':-$h*$currentPage},300);
+					$pages.eq($currentPage).addClass('moving').siblings().removeClass('moving');
+					$points.eq($currentPage).addClass('active').siblings().removeClass('active');
+					
+				}, 200);
+				
 			})
 		})
 
