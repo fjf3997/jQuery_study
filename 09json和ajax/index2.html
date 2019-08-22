@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $.ajax({
+            url:'data.json',
+            type:'get',
+            dataType:'json'
+        })
+        .done(function (data) {
+            console.log(data);
+          })
+        .fail(function(){
+            alert("服务器响应超时");
+        })
+    </script>
+</head>
+<body>
+    <p>姓名:<span id="name"></span></p>
+    <p>年龄:<span id="age"></span></p>
+</body>
+</html>
