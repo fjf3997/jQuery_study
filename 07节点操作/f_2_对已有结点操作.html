@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#p1').insertBefore($('#title'));
+            $('#span').appendTo($('#p1'));
+            $('#link').prependTo($('#p1'));
+            $('#title').remove();
+        })
+    </script>
+</head>
+<body>
+    <h1 id="title">这是标题一</h1>
+    <p id='p1'>这是文本一</p>
+    <span id="span">这是span文本</span>
+    <a id="link" href="#">连接</a>
+</body>
+</html>

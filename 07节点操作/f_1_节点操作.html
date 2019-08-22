@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $a = $('<a href="#">后连接</a>');
+            $a2 = $("<a href='#'>前连接</a>");
+            $h1 = $('<h1>前标题</h1>');
+            $h2 = $('<h1>后标题</h1>');
+            // $('#div').append($a);
+            // $('#div').prepend($a2);
+            // $('#div').before($h1);
+            // $('#div').after($h2);
+            $a.appendTo($('#div'));
+            $a2.prependTo($('#div'));
+            $h1.insertBefore($('#div'));
+            $h2.insertAfter($('#div'));
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="div">
+        <h1>这点标题一</h1>
+    </div>
+</body>
+</html>

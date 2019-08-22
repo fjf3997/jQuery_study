@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#text1').focus();
+            $('#text1').blur(function(){
+                // alert('失去焦点');
+            });
+            $('#form1').submit(function(){
+                alert('提交');
+                //阻止默认行为
+                return false;
+            })
+        });
+        
+        
+    </script>
+</head>
+<body>
+    <form action="http://www.baidu.com" id="form1">
+        文本一:<input type="text" name="" id="text1"><br>
+        文本二:<input type="text" name="" id="text2"><br>
+        <input type="submit" value="提交" id="sub">
+    </form>
+</body>
+</html>
