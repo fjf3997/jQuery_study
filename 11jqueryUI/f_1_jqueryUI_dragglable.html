@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+
+        $(function(){
+            $('.box').draggable({
+                axis:'x',
+                containment:'parent',
+                drag:function(ev,ui){
+                    // console.log(ev);
+                    // console.log(ui.position.left);
+                    // document.title=ui.position.left;
+                    $('.grey').css('width',ui.position.left);
+                    $('#show').val(parseInt((ui.position.left/600)*100));
+                }
+            });
+        })
+       
+    </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .rootCon{
+            width: 650px;
+            height: 32px;
+            margin: 50px auto 0px;
+        }
+        .con{
+            width: 600px;
+            height: 30px;
+            border: 1px solid black;
+            
+            float:left;
+        }
+        .con .grey{
+            width: 0px;
+            height: 30px;
+            background-color: grey;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .con .box{
+            width: 30px;
+            height: 30px;
+            background-color: gold;
+            float: left;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #show{
+            width: 48px;
+            height: 30px;
+            text-align: center;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="rootCon">
+        <div class="con">
+            <div class="grey"></div>
+            <div class="box"></div>
+        </div>
+        <input type="text" name="" id="show">
+    </div>
+</body>
+</html>

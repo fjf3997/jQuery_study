@@ -8,6 +8,24 @@
 	<script src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/slide3.js"></script>
 	<title>天天生鲜-首页</title>
+	<script>
+		$(function(){
+			$('.user_login_btn').hide();
+			$.ajax({
+				url:"js/data.json",
+				type: "get",
+				dataType:"json"
+			})
+			.done(function(data){
+				console.log(data);
+				$('.user_info em').html(data.name);
+				$('.user_info').show();
+			})
+			.fail(function(){
+				alert('服务器连接超时');
+			})
+		})
+	</script>
 </head>
 <body>
 

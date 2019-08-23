@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        //https://sug.so.360.cn/suggest?
+        //callback=suggest_so&encodein=utf-8&encodeout=utf-8&format=json&fields=word
+        //&word=a&huid=10Q%2Fa6g2xv4SIJexapRF7R5z87WflMulyl8AQpH57zdt8%3D&llbq=A5%2CB5%2CC5%2CD5
+        $(function(){
+            var $ul = $('#ul');
+            $.ajax({
+                url: 'data_jsonp.json',
+                type: 'get',
+                dataType: 'jsonp',
+                jsonpCallback: 'funback'
+            })
+            .done(function(data){
+                var len = data.a.length;
+                for(var i=0;i<len;i++){
+                    var $li = $('<li>');
+                    $li.html(data.a[i]);
+                    $ul.append($li);
+                }
+            })
+            .fail(function(){
+                alert('连接失败');
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <ul id="ul">
+    
+    </ul>
+</body>
+</html>
+<!-- https://www.sogou.com/suggnew/ajajjson?
+key=b&type=web&ori=yes&pr=web&abtestid=0
+&ipn=&t=1566525765223&suguuid=4220d1bd-976e-46b9-ada8-ab1deb3ce962
+&ip=112.24.5.232&iploc=3211&suid=F99F06DD3565860A5CF3566400026727
+&yyid=null&pid=sogou&policyno=null&mfp=null&hs=https&mp=1&prereq_a=
+%E7%AB%A0%E8%8B%A5%E6%A5%A0&sugsuv=00B70D22DEBA65495CEE4E40790D0470&sugtime=1566525780571 -->

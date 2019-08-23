@@ -7,32 +7,37 @@
     <title>Document</title>
     <script src="js/jquery-1.12.4.min.js"></script>
     <script>
-        // $(function(){
-        //     $.ajax({
-        //         url:'data.json',
-        //         type:'get',
-        //         dataType:'json'
-        //     })
-        //     .done(function (data) {
-        //         console.log(data);
-        //     })
-        //     .fail(function(){
-        //         alert("服务器响应超时");
-        //     })
-        // })
-        $.ajax({
-			url:'data.json',
-			type:'get',
-            dataType:'json'
-			})
-			.done(function(dat){
-				$('#username').html(dat.name);
-				$('#userage').html(dat.age);
+        $(function(){
+            $.ajax({
+                url:'data.json',
+                type:'get',
+                dataType:'json'
+            })
+            .done(function (data) {
+                console.log(data);
+                console.log(data.name);
+                console.log(data.age);
+                console.log(data.info);
+                $('#username').html(data.name);
+                $('#userage').html(data.age);
+            })
+            .fail(function(){
+                alert("服务器响应超时");
+            })
+        })
+        // $.ajax({
+		// 	url:'data.json',
+		// 	type:'get',
+        //     dataType:'json'
+		// 	})
+		// 	.done(function(dat){
+		// 		$('#username').html(dat.name);
+		// 		$('#userage').html(dat.age);
 
-			})
-			.fail(function(){
-				alert('服务器超时！');
-			})
+		// 	})
+		// 	.fail(function(){
+		// 		alert('服务器超时！');
+		// 	})
     </script>
 </head>
 <body>
